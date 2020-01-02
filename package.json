@@ -1,0 +1,13 @@
+{
+  "name": "example-aws-s3-lambda",
+  "version": "1.0.0",
+  "description": "Example project for configuring a lambda to be triggered when a file is added to an S3 bucket.",
+  "repository": "git@github.com:dsandor/example-aws-s3-lambda.git",
+  "author": "David Sandor <david.sandor@gmail.com>",
+  "private": false,
+  "scripts": {
+    "package": "sam package --template-file template.yaml --s3-bucket demo-lambda-deploy --output-template-file packaged.yaml",
+    "deploy": "sam deploy --template-file ./packaged.yaml --stack-name example-aws-s3-lambda --capabilities CAPABILITY_IAM",
+    "undeploy": "aws cloudformation delete-stack --stack-name example-aws-s3-lambda"
+  }
+}
