@@ -4,23 +4,22 @@ Globals:
   Function:
     MemorySize: 128
     Timeout: 15
-
 Resources:
-
-  # Permissions
   AllowS3ToCallLambdaPermission:
     Type: AWS::Lambda::Permission
     Properties:
-      Action: 'lambda:InvokeFunction'
-      FunctionName: !Ref S3TriggeredLambdaHandler
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Ref: S3TriggeredLambdaHandler
       Principal: s3.amazonaws.com
-      SourceArn: !GetAtt S3Bucket.Arn
-
-  # Functions
+      SourceArn:
+        Fn::GetAtt:
+        - S3Bucket
+        - Arn
   S3TriggeredLambdaHandler:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: .
+      CodeUri: s3://demo-lambda-deploy/6b59a3e083549974be4011f9c52f47eb
       Handler: lambda.handler
       Description: Function that is called when a file is stored in S3.
       Runtime: nodejs12.x
@@ -28,10 +27,8 @@ Resources:
         S3Bucket:
           Type: S3
           Properties:
-            Bucket: !Ref S3Bucket
-            Events: 's3:ObjectCreated:*'
-
-  # S3 Bucket
+            Bucket:
+              Ref: S3Bucket
+            Events: s3:ObjectCreated:*
   S3Bucket:
     Type: AWS::S3::Bucket
-
