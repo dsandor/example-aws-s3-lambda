@@ -1,0 +1,36 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2020-01-03T15:11:20.855Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AAAAAAAAAAAAAAAAAAAAA"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "1.1.1.1"
+      },
+      "responseElements": {
+        "x-amz-request-id": "ECB474730F9F9391"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "bucket": {
+          "name": "example-aws-s3-lambda-s3bucket-e3pqxa5xweqw",
+          "ownerIdentity": {
+            "principalId": "AAAAAAAAAAAAAAAAA"
+          },
+          "arn": "arn:aws:s3:::example-aws-s3-lambda-s3bucket-e3pqxa5xweqw"
+        },
+        "object": {
+          "key": "example-file.txt",
+          "size": 41,
+          "eTag": "b85f834c35f965d26f92f1f5da0e58d1",
+          "sequencer": "005E0F5998B6954AD4"
+        }
+      }
+    }
+  ]
+}

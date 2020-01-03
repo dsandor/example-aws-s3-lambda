@@ -7,14 +7,9 @@ Globals:
 
 Resources:
 
-  # Permissions
-  AllowS3ToCallLambdaPermission:
-    Type: AWS::Lambda::Permission
-    Properties:
-      Action: 'lambda:InvokeFunction'
-      FunctionName: !Ref S3TriggeredLambdaHandler
-      Principal: s3.amazonaws.com
-      SourceArn: !GetAtt S3Bucket.Arn
+  # S3 Bucket
+  S3Bucket:
+    Type: AWS::S3::Bucket
 
   # Functions
   S3TriggeredLambdaHandler:
@@ -31,7 +26,11 @@ Resources:
             Bucket: !Ref S3Bucket
             Events: 's3:ObjectCreated:*'
 
-  # S3 Bucket
-  S3Bucket:
-    Type: AWS::S3::Bucket
-
+  # Permissions
+  AllowS3ToCallLambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: 'lambda:InvokeFunction'
+      FunctionName: !Ref S3TriggeredLambdaHandler
+      Principal: s3.amazonaws.com
+      SourceArn: !GetAtt S3Bucket.Arn
