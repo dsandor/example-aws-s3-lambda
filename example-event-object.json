@@ -1,36 +1,38 @@
 {
-  "Records": [
-    {
-      "eventVersion": "2.1",
-      "eventSource": "aws:s3",
-      "awsRegion": "us-east-1",
-      "eventTime": "2020-01-03T15:11:20.855Z",
-      "eventName": "ObjectCreated:Put",
-      "userIdentity": {
-        "principalId": "AWS:AAAAAAAAAAAAAAAAAAAAA"
-      },
-      "requestParameters": {
-        "sourceIPAddress": "1.1.1.1"
-      },
-      "responseElements": {
-        "x-amz-request-id": "ECB474730F9F9391"
-      },
-      "s3": {
-        "s3SchemaVersion": "1.0",
-        "bucket": {
-          "name": "example-aws-s3-lambda-s3bucket-e3pqxa5xweqw",
-          "ownerIdentity": {
-            "principalId": "AAAAAAAAAAAAAAAAA"
-          },
-          "arn": "arn:aws:s3:::example-aws-s3-lambda-s3bucket-e3pqxa5xweqw"
-        },
-        "object": {
-          "key": "example-file.txt",
-          "size": 41,
-          "eTag": "b85f834c35f965d26f92f1f5da0e58d1",
-          "sequencer": "005E0F5998B6954AD4"
+    "Records": [
+        {
+            "eventVersion": "2.1",
+            "eventSource": "aws:s3",
+            "awsRegion": "us-east-1",
+            "eventTime": "2022-01-23T17:03:36.312Z",
+            "eventName": "ObjectCreated:Put",
+            "userIdentity": {
+                "principalId": "A12RXJR753FPNZ"
+            },
+            "requestParameters": {
+                "sourceIPAddress": "163.116.205.118"
+            },
+            "responseElements": {
+                "x-amz-request-id": "D2D0HMMR8CZFDRT4",
+                "x-amz-id-2": "CRa94jVOAppi9lCfxZc0SAvcMTLnvgvlrh0f6gkQHoo/7wAPdl0Jb3CGLtmWRQeJJVMnINnaYLXB9KlM2FWJ/H14uSLhmwys"
+            },
+            "s3": {
+                "s3SchemaVersion": "1.0",
+                "configurationId": "bc788240-c357-4381-949e-1f01bfa21e8d",
+                "bucket": {
+                    "name": "suvra503suvoshree201-s3bucket-7wekgdmwddr3",
+                    "ownerIdentity": {
+                        "principalId": "A12RXJR753FPNZ"
+                    },
+                    "arn": "arn:aws:s3:::suvra503suvoshree201-s3bucket-7wekgdmwddr3"
+                },
+                "object": {
+                    "key": "temp.txt",
+                    "size": 18,
+                    "eTag": "2f95015af22bc6823ee066030c13a6ab",
+                    "sequencer": "0061ED8A684AD033D3"
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }
